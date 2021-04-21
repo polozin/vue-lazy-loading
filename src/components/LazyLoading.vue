@@ -17,6 +17,7 @@
 </template>
 
 <script>
+    //project in github https://github.com/polozin/vue-lazy-loading
     export default {
         name: "LazyLoading",
         PAGE_COUNT: 20,
