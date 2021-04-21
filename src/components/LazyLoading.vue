@@ -1,12 +1,14 @@
 <template>
     <div class="master">
         <div class="header">
-            <button v-show="!started" @click="start">Show Items</button>
+            <button  @click="start">Show Items</button>
         </div>
         <div class="content" @scroll.passive="handleScroll">
+            <transition-group name="list" tag="p">
             <div v-for="(item, index) in list" class="item" :id="'i' + index " :key="index">
                 {{item}}
             </div>
+            </transition-group>
         </div>
         <div class="footer">
             <div class="author">@Constantin Polozin 2021</div>
@@ -58,8 +60,7 @@
     .master {
         height: 100%;
         min-height: 100%;
-        display: flex;
-        flex-direction: column;
+
     }
 
     .content {
@@ -68,7 +69,7 @@
     }
 
     .header {
-        height: 30px;
+        height: 22px;
         padding: 20px;
         background-color: brown;
     }
@@ -93,5 +94,12 @@
         font-size: 20px;
         margin-bottom: 2px;
     }
-
+    .list-enter-active, .list-leave-active {
+        transition: all 2s;
+    }
+    .list-enter, .list-leave-to /* .list-leave-active до версии 2.1.8 */ {
+        opacity: 0;
+        color: brown;
+        font-size: 19px;
+    }
 </style>
