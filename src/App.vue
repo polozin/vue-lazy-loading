@@ -1,17 +1,17 @@
 <template>
     <div id="app">
-      <VirtualList :items="list"/>
+      <LazyLoading :items="list"/>
     </div>
 </template>
 
 <script>
-    import VirtualList from './components/VirtualList';
+    import LazyLoading from './components/LazyLoading';
 
     export default {
         name: 'App',
         LIST_COUNT: 1000,
         components: {
-            VirtualList
+            LazyLoading
         },
         data: () => {
             return {

@@ -1,4 +1,4 @@
-# virtuallist
+# Lazy Loading in VUE
 
 ## Project setup
 ```
